@@ -1,5 +1,6 @@
 package com.CampbellCrowley.SpikeyBot;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 public class TokenResponse implements Callback {
@@ -11,11 +12,12 @@ public class TokenResponse implements Callback {
 
   public void callback(final String res) {
     if (res.length() == 0) {
-      player.sendMessage("Failed to fetch token. Please try again later.");
+      player.sendMessage(
+          ChatColor.RED + "Failed to fetch token. Please try again later.");
     } else {
       player.sendMessage(
-          "Begin linking your account here: https://www.spikeycraft.com/"
-              + "account/?token=" + res);
+          "Manage your account here:\n" + ChatColor.AQUA + ChatColor.UNDERLINE
+              + "https://www.spikeycraft.com/account/?token=" + res);
     }
   }
 }

@@ -14,8 +14,10 @@ public class SpikeyBot extends JavaPlugin {
         sender.sendMessage("This command can only be run by a player.");
         return true;
       }
-      final String uuid = ((Player) sender).getUniqueId().toString().replace("-", "");
-      if (args.length > 0 && args[0].equalsIgnoreCase("link")) {
+      final String uuid = ((Player) sender).getUniqueId().toString()
+          .replace("-", "");
+      if (args.length > 0 && (args[0].equalsIgnoreCase("link")
+          || args[0].equalsIgnoreCase("unlink"))) {
         Thread t = new Thread(new HttpsRequest(
             "https://www.spikeycraft.com/begin/minecraft/" + uuid,
             new TokenResponse((Player) sender)));
@@ -23,7 +25,7 @@ public class SpikeyBot extends JavaPlugin {
       } else {
         Thread t = new Thread(new HttpsRequest(
             "https://www.spikeycraft.com/fetch/patreon/" + uuid,
-            new PatreonResponse((Player) sender, this)));
+            new PatreonResponse((Player) sender)));
         t.start();
       }
       return true;
