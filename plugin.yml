@@ -1,0 +1,14 @@
+name: SpikeyBot-Spigot
+main: com.CampbellCrowley.SpikeyBot.SpikeyBot
+authors: [Campbell Crowley, SpikeyRobot]
+version: 0.0.1
+api-version: 1.13
+commands:
+  patreon:
+    description: Link Minecraft account to Spikey's Patreon.
+    usage: /patreon [link]
+    permission: SB.patreon
+permissions:
+  SB.patreon:
+    description: Allows the player to check their Patreon account linking status.
+    default: true
