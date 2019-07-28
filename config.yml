@@ -1,0 +1,11 @@
+# The LuckPerms related settings for role management.
+luckperms:
+  # Should SpikeyBot attempt to interface with LuckPerms.
+  enabled: true
+  # The group to put Patreon supporters in.
+  donator-group: donator
+  # Update role when user logs in, otherwise only updates when /patreon is run.
+  # Role is removed when user logs out. So if disabled, players will need to run
+  # the command on each login in order to get role.
+  update-on-login: true
+  give-role-message: Thanks for supporting Spikey! You now have the donator role.
